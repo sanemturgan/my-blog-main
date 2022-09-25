@@ -1,13 +1,14 @@
 import BlogList from './components/BlogList';
 import useFetch from './useFetch';
 import { CircularProgress } from '@chakra-ui/react';
+import { useParams, useNavigate } from 'react-router-dom';
 const Home = () => {
+  const { author } = useParams();
   const {
+    data: blog,
     error,
     isPending,
-    data: blogs,
-  } = useFetch('http://localhost:8000/blogs');
-
+  } = useFetch('http://localhost:8000/blogs/' + author);
   return (
     <div className="home">
       {error && <div>{error}</div>}
@@ -17,22 +18,9 @@ const Home = () => {
           <p>Loading...</p>
         </div>
       )}
-      {blogs && <BlogList blogs={blogs} />}
+      {blog && <BlogList blogs={blog} />}
     </div>
   );
 };
 
 export default Home;
-// const handleDelete = (id) => {
-//   const newBlogs = blogs.filter((blog) => blog.id !== id);
-//   setBlogs(newBlogs);
-// };
-
-// useEffect(() => {
-//   fetch('https://jsonplaceholder.typicode.com/posts')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       setBlogs(data);
-//       console.log(data);
-//     });
-// }, []);

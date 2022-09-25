@@ -1,19 +1,29 @@
+import { Link } from 'react-router-dom';
+import { SunIcon } from '@chakra-ui/icons';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>My Blog</h1>
+      <Link to="/">
+        {' '}
+        <div className="navbarlogo">
+          {' '}
+          <h1>Blog</h1>
+          <h1>
+            <SunIcon />
+          </h1>
+        </div>{' '}
+      </Link>
       <div className="links">
-        <a href="/">Home</a>
-        <a
-          href="/create"
+        <Link
+          to="/create"
           style={{
             color: 'white',
-            backgroundColor: '#f1356d',
+            backgroundColor: '#572da7',
             borderRadius: '8px',
           }}
         >
           New Blog
-        </a>
+        </Link>
       </div>
     </nav>
   );
