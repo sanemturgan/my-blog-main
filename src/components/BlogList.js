@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
-import { StarIcon } from '@chakra-ui/icons';
-import { Flex } from '@chakra-ui/react';
+import React from 'react';
 
 const BlogList = ({ blogs, handleDelete }) => {
   // const [likes, setLikes] = useState(0);

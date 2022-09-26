@@ -1,22 +1,6 @@
 import { Link } from 'react-router-dom';
-import {
-  SunIcon,
-  ChevronDownIcon,
-  HamburgerIcon,
-  CloseIcon,
-  AddIcon,
-} from '@chakra-ui/icons';
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  Button,
-} from '@chakra-ui/react';
+import { SunIcon, HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react';
 const Navbar = () => {
   return (
     <nav className="navbar">
