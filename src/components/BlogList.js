@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { StarIcon } from '@chakra-ui/icons';
 import { Flex } from '@chakra-ui/react';
+
 const BlogList = ({ blogs, handleDelete }) => {
   // const [likes, setLikes] = useState(0);
   // const [isClicked, setIsClicked] = useState(false);
@@ -33,19 +34,7 @@ const BlogList = ({ blogs, handleDelete }) => {
           </div>
           <div className="list-bottom">
             {/* <div dangerouslySetInnerHTML={{ __html: blog.tags }} /> */}
-            <button>
-              <span
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: '14px',
-                }}
-              >
-                <StarIcon w={3} h={3} />
-                {blog.rates}
-              </span>
-            </button>
+
             <Link to={`/blogs/${blog.id}`}>
               <div className="more">
                 <button>Read More..</button>

@@ -103,7 +103,7 @@
 }
 .more {
   display: flex;
-  padding: 5px;
+  padding: 5px 0;
   justify-content: end;
   width: 100%;
   color: #45b649;

@@ -16,7 +16,7 @@ const Create = () => {
       body: JSON.stringify(blog),
     }).then(() => {
       console.log('new blog added');
-      navigate('/');
+      navigate('/home');
     });
   };
 
@@ -52,11 +52,6 @@ const Create = () => {
           onChange={(e) => setImage(e.target.value)}
         />
         <button>Add Blog</button>
-
-        <h2>{title}</h2>
-        <img src={image} alt="" />
-        <p>{body}</p>
-        <p>{author}</p>
       </form>
     </div>
   );

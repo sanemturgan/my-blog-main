@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { SunIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import {
+  SunIcon,
+  ChevronDownIcon,
+  HamburgerIcon,
+  CloseIcon,
+  AddIcon,
+} from '@chakra-ui/icons';
 import {
   Menu,
   MenuButton,
@@ -31,27 +37,29 @@ const Navbar = () => {
               <MenuButton
                 isActive={isOpen}
                 as={Button}
-                rightIcon={<ChevronDownIcon />}
                 style={{
                   color: 'white',
                   backgroundColor: '#f1f0f3',
                   borderRadius: '8px',
                 }}
               >
-                {isOpen ? 'Close' : 'Menu'}
+                {isOpen ? <CloseIcon /> : <HamburgerIcon />}
               </MenuButton>
               <MenuList>
-                <MenuItem onClick={() => alert('Kagebunshin')}>
+                <MenuItem>
                   {' '}
                   <Link to="/">Home Page</Link>
                 </MenuItem>
                 <MenuItem
                   style={{
                     backgroundColor: '#a5e6a7',
+                    textAlign: 'center',
                   }}
                 >
                   {' '}
-                  <Link to="/create">New Blog</Link>
+                  <Link to="/create">
+                    New Blog <AddIcon style={{ margin: '0 5px' }} w={3} h={3} />
+                  </Link>
                 </MenuItem>
               </MenuList>
             </>

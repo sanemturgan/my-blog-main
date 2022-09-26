@@ -81,6 +81,7 @@ const BlogEdit = () => {
     }).then((res) => {
       res.json().then((resp) => {
         console.warn(resp);
+        navigate('/home');
       });
     });
   }
@@ -91,7 +92,7 @@ const BlogEdit = () => {
       {error && <div>{error}</div>}
       {blog && (
         <article>
-          <form className="form" onClick={updateBlog}>
+          <form className="form">
             <label>Blog Title:</label>
             <div className="editable">
               <Editable
@@ -153,6 +154,7 @@ const BlogEdit = () => {
                 <EditableControls />
               </Editable>
             </div>
+            <label>Blog Image URL:</label>
             <div className="editable">
               <Editable
                 textAlign="left"
@@ -173,7 +175,7 @@ const BlogEdit = () => {
               </Editable>
             </div>
 
-            <Button size="xl" colorScheme="whiteAlpha">
+            <Button size="xl" colorScheme="whiteAlpha" onClick={updateBlog}>
               Update Blog
             </Button>
           </form>
