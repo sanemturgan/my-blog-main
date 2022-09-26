@@ -10,16 +10,22 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  background-color: #ffff;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 .navbarlogo {
   display: flex;
 }
 .navbar h1 {
-  color: #572da7;
+  color: #45b649;
   margin-right: 5px;
+  font-weight: 600;
+  font-size: large;
 }
 .navbar .links {
   margin-left: auto;
@@ -30,7 +36,7 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #572da7;
+  color: #45b649;
 }
 .content {
   max-width: 900px;
@@ -58,7 +64,7 @@
 }
 .blog-preview h2 {
   font-size: 20px;
-  color: #572da7;
+  color: #45b649;
   margin: 8px 0;
 }
 .blog-preview a {
@@ -66,8 +72,25 @@
 }
 .blogOne {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+.image {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  padding: 10px 0;
+}
+.image img {
+  position: relative;
+  object-fit: cover;
+}
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .blogdescription {
   overflow: hidden;
@@ -83,23 +106,29 @@
   padding: 5px;
   justify-content: end;
   width: 100%;
-  color: #572da7;
+  color: #45b649;
   font-size: 16px;
 }
 .more:hover {
   text-decoration: underline;
 }
 .list-bottom {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid #ddd;
 }
+.like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* blog details page */
 .blog-details h2 {
   font-size: 20px;
-  color: #572da7;
+  color: #45b649;
   margin-bottom: 10px;
 }
 .blog-details div {
@@ -113,6 +142,35 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.detailDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+}
+.imageDetail {
+  display: flex;
+  width: 100%;
+  height: 300px;
+}
+.imageDetail img {
+  position: relative;
+  object-fit: cover;
+}
+.buttons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* create new blog form */
 .create {
@@ -123,10 +181,12 @@
 .create label {
   text-align: left;
   display: block;
+  font-size: 20px;
+  color: #45b649;
 }
 .create h2 {
   font-size: 20px;
-  color: #572da7;
+  color: #45b649;
   margin-bottom: 30px;
 }
 .create input,
@@ -140,10 +200,47 @@
   display: block;
 }
 .create button {
-  background: #572da7;
-  color: #fff;
+  background: #f1f0f3;
+  color: #333;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+.create button:hover {
+  color: #45b649;
+}
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.editable {
+  width: 100%;
+}
+/* Banner */
+.banner {
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-image: url('https://img.freepik.com/free-photo/people-white-sand-beach-banner_53876-146260.jpg?w=996&t=st=1664196566~exp=1664197166~hmac=28b9ee9e69c76ae8a41bbd492c9523a7c8b93bd5c8189d16b25879a401d04158');
+}
+.bannerdesc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 310px;
+}
+.bannerdesc h1 {
+  font-size: 32px;
+  background-color: #f2f2f271;
+  border: 1px solid #f2f2f271;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
 }

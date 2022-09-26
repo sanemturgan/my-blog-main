@@ -8,6 +8,7 @@ import BlogDetails from './components/BlogDetails';
 import NotFound from './components/NotFound';
 import BlogEdit from './components/BlogEdit';
 import UserPage from './UserPage';
+import Banner from './Banner';
 function App() {
   return (
     <Router>
@@ -16,7 +17,8 @@ function App() {
           <Navbar />
           <div className="content">
             <Routes>
-              <Route path="/" element={<Home />}></Route>
+              <Route path="/" element={<Banner />}></Route>
+              <Route path="/home" element={<Home />}></Route>
               <Route path="/create" element={<Create />}></Route>
               <Route path="/blogs/:id" element={<BlogDetails />}></Route>
               <Route path="/blogs/:id/user" element={<UserPage />}></Route>

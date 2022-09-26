@@ -4,11 +4,12 @@ const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
+  const [image, setImage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author };
+    const blog = { title, body, author, image };
     fetch('http://localhost:8000/blogs/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -43,9 +44,17 @@ const Create = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
+        <label>Blog Image URL:</label>
+        <input
+          type="text"
+          required
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
         <button>Add Blog</button>
 
         <h2>{title}</h2>
+        <img src={image} alt="" />
         <p>{body}</p>
         <p>{author}</p>
       </form>

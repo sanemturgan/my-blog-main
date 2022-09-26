@@ -1,28 +1,32 @@
 {
   "blogs": [
     {
-      "title": "Lorem ipsum dolor sit amet",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "author": "mario",
-      "tags": ["english", "classic", "american"],
-      "reactions": 3,
+      "title": "Dave wasn't exactly sure how he had ended up",
+      "body": "Dave wasn't exactly sure how he had ended up in this predicament. He ran through all the events that had lead to this current situation and it still didn't make sense. He wanted to spend some time to try and make sense of it all, but he had higher priorities at the moment. The first was how to get out of his current situation of being naked in a tree with snow falling all around and no way for him to get down.",
+      "author": "Sanem",
+      "image": "https://images.freeimages.com/images/large-previews/566/green-frog-1361810.jpg",
       "id": 1
-    },
-    {
-      "title": "Lorem Ipsum!",
-      "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
-      "author": "yoshi",
-      "tags": ["american", "english"],
-      "reactions": 5,
-      "id": 2
     },
     {
       "title": "Deneme",
       "body": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id",
       "author": "Sanem",
-      "tags": ["mystery", "english", "love"],
-      "reactions": 1,
+      "image": "https://images.freeimages.com/images/large-previews/d0f/nuclear-power-plant-1314782.jpg",
       "id": 6
+    },
+    {
+      "title": "Deneme Yeni Updated Try",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida",
+      "author": "İlaydaSanem",
+      "image": "https://images.freeimages.com/images/large-previews/d0f/nuclear-power-plant-1314782.jpg",
+      "id": 7
+    },
+    {
+      "title": "test Blog",
+      "body": "sdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjksdhgldkhfgasşdogadşrjkgdrşgjhdfşgjkhdfşgjk",
+      "author": "Sanem",
+      "image": "https://images.freeimages.com/images/large-previews/70b/bike-red-1423575.jpg",
+      "id": 8
     }
   ]
 }

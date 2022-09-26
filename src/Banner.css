@@ -1,0 +1,7 @@
+/* Banner */
+.banner {
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-image: url('https://img.freepik.com/free-photo/people-white-sand-beach-banner_53876-146260.jpg?w=996&t=st=1664196566~exp=1664197166~hmac=28b9ee9e69c76ae8a41bbd492c9523a7c8b93bd5c8189d16b25879a401d04158');
+}

@@ -10,6 +10,15 @@ import {
   Flex,
   Input,
   useEditableControls,
+  Button,
+  useColorModeValue,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +27,7 @@ const BlogEdit = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
+  const [image, setImage] = useState('');
   const { id } = useParams();
   const {
     data: blog,
@@ -26,18 +36,6 @@ const BlogEdit = () => {
   } = useFetch('http://localhost:8000/blogs/' + id);
 
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    fetch('http://localhost:8000/blogs/' + id, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(blog),
-    }).then(() => {
-      console.log(blog);
-      navigate('/');
-    });
-  };
 
   function EditableControls() {
     const {
@@ -48,15 +46,43 @@ const BlogEdit = () => {
     } = useEditableControls();
 
     return isEditing ? (
-      <ButtonGroup justifyContent="center" size="sm">
+      <ButtonGroup
+        justifyContent="flex-end"
+        display="flex"
+        alignItems="flex-end"
+        size="sm"
+        colorScheme="whiteAlpha"
+      >
         <IconButton icon={<CheckIcon />} {...getSubmitButtonProps()} />
         <IconButton icon={<CloseIcon />} {...getCancelButtonProps()} />
       </ButtonGroup>
     ) : (
-      <Flex justifyContent="center">
-        <IconButton size="sm" icon={<EditIcon />} {...getEditButtonProps()} />
+      <Flex justifyContent="flex-end">
+        <IconButton
+          size="sm"
+          variant="with-shadow"
+          icon={<EditIcon />}
+          {...getEditButtonProps()}
+        />
       </Flex>
     );
+  }
+
+  function updateBlog() {
+    let item = { title, body, author, image };
+    console.warn('item', item);
+    fetch(`http://localhost:8000/blogs/${id}`, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(item),
+    }).then((res) => {
+      res.json().then((resp) => {
+        console.warn(resp);
+      });
+    });
   }
 
   return (
@@ -65,55 +91,91 @@ const BlogEdit = () => {
       {error && <div>{error}</div>}
       {blog && (
         <article>
-          <form onSubmit={handleSubmit}>
+          <form className="form" onClick={updateBlog}>
             <label>Blog Title:</label>
-            <Editable
-              textAlign="center"
-              defaultValue={blog.title}
-              fontSize="2xl"
-              isPreviewFocusable={false}
-            >
-              <EditablePreview />
-              {/* Here is the custom input */}
-              <Input
-                as={EditableInput}
-                value={blog.title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <EditableControls />
-            </Editable>
+            <div className="editable">
+              <Editable
+                textAlign="left"
+                defaultValue={blog.title}
+                fontSize="1x1"
+                isPreviewFocusable={false}
+              >
+                <EditablePreview />
 
+                <Input
+                  type="text"
+                  focusBorderColor="purple.300"
+                  as={EditableInput}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+                <EditableControls />
+              </Editable>
+            </div>
             <label>Blog Body:</label>
-            <Editable
-              textAlign="center"
-              defaultValue={blog.body}
-              fontSize="2xl"
-              isPreviewFocusable={false}
-            >
-              <EditableTextarea />
-              <EditablePreview />
-              {/* Here is the custom input */}
-              <Input
-                as={EditableInput}
-                value={blog.body}
-                onChange={(e) => setBody(e.target.value)}
-              />
-              <EditableControls />
-            </Editable>
+            <div className="editable">
+              <Editable
+                textAlign="left"
+                defaultValue={blog.body}
+                fontSize="1x1"
+                isPreviewFocusable={false}
+              >
+                <EditableTextarea size="lg" />
+                <EditablePreview />
 
-            <label>Blog Author: </label>
-            <select
-              value={blog.author}
-              onChange={(e) => setAuthor(e.target.value)}
-            >
-              <option value="mario">mario</option>
-              <option value="yoshi">yoshi</option>
-            </select>
-            <button>Add Blog</button>
+                <Input
+                  focusBorderColor="purple.300"
+                  as={EditableInput}
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}
+                  size="lg"
+                />
+                <EditableControls />
+              </Editable>
+            </div>
+            <label>Blog Author:</label>
+            <div className="editable">
+              <Editable
+                textAlign="left"
+                defaultValue={blog.author}
+                fontSize="1x1"
+                isPreviewFocusable={false}
+              >
+                <EditablePreview />
 
-            <h2>{title}</h2>
-            <p>{body}</p>
-            <p>{author}</p>
+                <Input
+                  type="text"
+                  focusBorderColor="purple.300"
+                  as={EditableInput}
+                  value={author}
+                  onChange={(e) => setAuthor(e.target.value)}
+                />
+                <EditableControls />
+              </Editable>
+            </div>
+            <div className="editable">
+              <Editable
+                textAlign="left"
+                defaultValue={blog.image}
+                fontSize="1x1"
+                isPreviewFocusable={false}
+              >
+                <EditablePreview />
+
+                <Input
+                  type="text"
+                  focusBorderColor="purple.300"
+                  as={EditableInput}
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                />
+                <EditableControls />
+              </Editable>
+            </div>
+
+            <Button size="xl" colorScheme="whiteAlpha">
+              Update Blog
+            </Button>
           </form>
         </article>
       )}
